@@ -39,8 +39,5 @@ build = {
           ['..'] = 'shell.nix',
           ['../scripts/update.sh'] = 'scripts/update.sh',
       },
-      lua = {
-          ['ime'] = 'lua/ime/get-GI_TYPELIB_PATH.nix'
-      },
   }
 }
