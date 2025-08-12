@@ -1,34 +1,34 @@
 # ime.nvim
 
 [![readthedocs](https://shields.io/readthedocs/ime-nvim)](https://ime-nvim.readthedocs.io)
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Freed-Wu/ime.nvim/main.svg)](https://results.pre-commit.ci/latest/github/Freed-Wu/ime.nvim/main)
-[![github/workflow](https://github.com/Freed-Wu/ime.nvim/actions/workflows/main.yml/badge.svg)](https://github.com/Freed-Wu/ime.nvim/actions)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/rimeinn/ime.nvim/main.svg)](https://results.pre-commit.ci/latest/github/rimeinn/ime.nvim/main)
+[![github/workflow](https://github.com/rimeinn/ime.nvim/actions/workflows/main.yml/badge.svg)](https://github.com/rimeinn/ime.nvim/actions)
 
-[![github/downloads](https://shields.io/github/downloads/Freed-Wu/ime.nvim/total)](https://github.com/Freed-Wu/ime.nvim/releases)
-[![github/downloads/latest](https://shields.io/github/downloads/Freed-Wu/ime.nvim/latest/total)](https://github.com/Freed-Wu/ime.nvim/releases/latest)
-[![github/issues](https://shields.io/github/issues/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim/issues)
-[![github/issues-closed](https://shields.io/github/issues-closed/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim/issues?q=is%3Aissue+is%3Aclosed)
-[![github/issues-pr](https://shields.io/github/issues-pr/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim/pulls)
-[![github/issues-pr-closed](https://shields.io/github/issues-pr-closed/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim/pulls?q=is%3Apr+is%3Aclosed)
-[![github/discussions](https://shields.io/github/discussions/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim/discussions)
-[![github/milestones](https://shields.io/github/milestones/all/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim/milestones)
-[![github/forks](https://shields.io/github/forks/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim/network/members)
-[![github/stars](https://shields.io/github/stars/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim/stargazers)
-[![github/watchers](https://shields.io/github/watchers/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim/watchers)
-[![github/contributors](https://shields.io/github/contributors/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim/graphs/contributors)
-[![github/commit-activity](https://shields.io/github/commit-activity/w/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim/graphs/commit-activity)
-[![github/last-commit](https://shields.io/github/last-commit/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim/commits)
-[![github/release-date](https://shields.io/github/release-date/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim/releases/latest)
+[![github/downloads](https://shields.io/github/downloads/rimeinn/ime.nvim/total)](https://github.com/rimeinn/ime.nvim/releases)
+[![github/downloads/latest](https://shields.io/github/downloads/rimeinn/ime.nvim/latest/total)](https://github.com/rimeinn/ime.nvim/releases/latest)
+[![github/issues](https://shields.io/github/issues/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim/issues)
+[![github/issues-closed](https://shields.io/github/issues-closed/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim/issues?q=is%3Aissue+is%3Aclosed)
+[![github/issues-pr](https://shields.io/github/issues-pr/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim/pulls)
+[![github/issues-pr-closed](https://shields.io/github/issues-pr-closed/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim/pulls?q=is%3Apr+is%3Aclosed)
+[![github/discussions](https://shields.io/github/discussions/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim/discussions)
+[![github/milestones](https://shields.io/github/milestones/all/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim/milestones)
+[![github/forks](https://shields.io/github/forks/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim/network/members)
+[![github/stars](https://shields.io/github/stars/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim/stargazers)
+[![github/watchers](https://shields.io/github/watchers/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim/watchers)
+[![github/contributors](https://shields.io/github/contributors/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim/graphs/contributors)
+[![github/commit-activity](https://shields.io/github/commit-activity/w/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim/graphs/commit-activity)
+[![github/last-commit](https://shields.io/github/last-commit/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim/commits)
+[![github/release-date](https://shields.io/github/release-date/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim/releases/latest)
 
-[![github/license](https://shields.io/github/license/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim/blob/main/LICENSE)
-[![github/languages](https://shields.io/github/languages/count/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim)
-[![github/languages/top](https://shields.io/github/languages/top/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim)
-[![github/directory-file-count](https://shields.io/github/directory-file-count/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim)
-[![github/code-size](https://shields.io/github/languages/code-size/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim)
-[![github/repo-size](https://shields.io/github/repo-size/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim)
-[![github/v](https://shields.io/github/v/release/Freed-Wu/ime.nvim)](https://github.com/Freed-Wu/ime.nvim)
+[![github/license](https://shields.io/github/license/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim/blob/main/LICENSE)
+[![github/languages](https://shields.io/github/languages/count/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim)
+[![github/languages/top](https://shields.io/github/languages/top/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim)
+[![github/directory-file-count](https://shields.io/github/directory-file-count/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim)
+[![github/code-size](https://shields.io/github/languages/code-size/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim)
+[![github/repo-size](https://shields.io/github/repo-size/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim)
+[![github/v](https://shields.io/github/v/release/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim)
 
-[![luarocks](https://img.shields.io/luarocks/v/Freed-Wu/ime.nvim)](https://luarocks.org/modules/Freed-Wu/ime.nvim)
+[![luarocks](https://img.shields.io/luarocks/v/rimeinn/ime.nvim)](https://luarocks.org/modules/rimeinn/ime.nvim)
 
 Switch back from IME after `InsertLeave`. Powered by dbus.
 
@@ -69,7 +69,7 @@ Currently, we have two schemes to realize it:
 librime is a library for creating IME.
 
 - [coc-rime](https://github.com/tonyfettes/coc-rime): written in javascript
-- [rime.nvim](https://github.com/Freed-Wu/rime.nvim): written in lua
+- [rime.nvim](https://github.com/rimeinn/rime.nvim): written in lua
 
 ##### [dbus](https://dbus.freedesktop.org/)
 
@@ -183,7 +183,7 @@ We can create:
 #### [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
 - [cmp-rime](https://github.com/Ninlives/cmp-rime): written in python
-- [rime.nvim](https://github.com/Freed-Wu/rime.nvim#nvim-cmp): written in lua
+- [rime.nvim](https://github.com/rimeinn/rime.nvim#nvim-cmp): written in lua
 
 ##### Manage popup menu by itself
 
