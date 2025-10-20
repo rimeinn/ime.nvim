@@ -1,54 +1,83 @@
 ---backend for gnome-shell < 41. If you use ibus or fcitx5, please use them.
-
--- luacheck: ignore 212/self
-local p = require "dbus_proxy"
+---credit: https://github.com/lyokha/g3kb-switch
+local IME = require "ime.ime".IME
 local cjson = require "cjson"
-local proxy = p.Proxy:new(
-  {
-    bus = p.Bus.SESSION,
-    name = "org.gnome.Shell",
-    interface = "org.gnome.Shell",
-    path = "/org/gnome/Shell"
-  }
-)
+local fs = require 'ime.fs'
+local p = require "dbus_proxy"
 local M = {
-  proxy = proxy,
+    IME = {
+        proxy = {
+            bus = p.Bus.SESSION,
+            name = "org.gnome.Shell",
+            interface = "org.gnome.Shell",
+            path = "/org/gnome/Shell"
+        }
+    }
 }
 
----enable ascii mode
-function M:enable_ascii()
-  M.proxy:Eval("\"imports.ui.status.keyboard.getInputSourceManager().inputSources[0].activate()\"")
-end
-
----disable ascii mode
-function M:disable_ascii()
-  M.proxy:Eval("\"imports.ui.status.keyboard.getInputSourceManager().inputSources[1].activate()\"")
-end
-
----judge if ascii mode
----@return boolean
-function M:is_ascii()
-  return M.proxy:Eval("\"imports.ui.status.keyboard.getInputSourceManager().currentSource.index\"")[2] == "0"
-end
-
----get current input schema name
+---get file path
+---@param name string
 ---@return string
-function M:current()
-  local id = M.proxy:Eval("\"imports.ui.status.keyboard.getInputSourceManager().currentSource.index\"")[2]
-  for _, kv in ipairs(cjson.decode(M.proxy:Eval(
-    "\"var ids=[]; \
-    for(var i in imports.ui.status.keyboard.getInputSourceManager().inputSources){ \
-      ids.push({key:i,value:imports.ui.status.keyboard.getInputSourceManager().inputSources[i].id}) \
-    }; \
-    ids\""
-  )[2])) do
-    if kv.key == id then
-      return kv.value
-    end
-  end
-  return ""
+function M.get_path(name)
+    return fs.joinpath(
+        fs.dirname(debug.getinfo(1).source:match("@?(.*)")),
+        "scripts", name
+    )
 end
 
-M:current()
+---get file content
+---@param name string
+---@return string
+function M.get_content(name)
+    local f = io.open(M.get_path(name))
+    if f == nil then
+        return ""
+    end
+    local text = f:read("*a")
+    f:close()
+    return '"' .. text:gsub("\n", "") .. '"'
+end
+
+---@param ime table?
+---@return table ime
+function M.IME:new(ime)
+    ime = ime or {}
+    ime.proxy = ime.proxy or p.Proxy:new(M.IME.proxy)
+    ime = IME(ime)
+    setmetatable(ime, {
+        __index = self
+    })
+    return ime
+end
+
+setmetatable(M.IME, {
+    __index = IME,
+    __call = M.IME.new
+})
+
+---set IME enabled flag
+---@param is_enabled boolean
+function M.IME:set_enabled(is_enabled)
+    self.proxy:Eval(string.gsub(M.get_content("set_enabled.js"), "idx",
+        tostring(is_enabled and 1 or 0)))
+end
+
+---get IME enabled flag
+---@return boolean
+function M.IME:get_enabled()
+    return tonumber(self.proxy:Eval(M.get_content("get_enabled.js"))) ~= 0
+end
+
+---get current schema name
+---@return string
+function M.IME:get_schema_name()
+    local id = self.proxy:Eval(M.get_content("get_enabled.js"))
+    for _, kv in ipairs(cjson.decode(self.proxy:Eval(M.get_content("get_schema_name.js")))) do
+        if kv.key == id then
+            return kv.value
+        end
+    end
+    return ""
+end
 
 return M

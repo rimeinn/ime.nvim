@@ -1,15 +1,13 @@
----backend for g3kbswitch. If you use ibus or fcitx5, please use them.
----credit: https://github.com/black-desk
+---backend for fcitx5 with rime support
 local IME = require "ime.ime".IME
-local cjson = require "cjson"
 local p = require "dbus_proxy"
 local M = {
     IME = {
         proxy = {
             bus = p.Bus.SESSION,
-            name = "org.gnome.Shell",
-            interface = "org.g3kbswitch.G3kbSwitch",
-            path = "/org/g3kbswitch/G3kbSwitch"
+            name = "org.fcitx.Fcitx5",
+            interface = "org.fcitx.Fcitx.Rime1",
+            path = "/rime"
         }
     }
 }
@@ -34,25 +32,19 @@ setmetatable(M.IME, {
 ---set IME enabled flag
 ---@param is_enabled boolean
 function M.IME:set_enabled(is_enabled)
-    self.proxy:Set(is_enabled and 1 or 0)
+    self.proxy:SetAsciiMode(not is_enabled)
 end
 
 ---get IME enabled flag
 ---@return boolean
 function M.IME:get_enabled()
-    return self.proxy:Get()[2] ~= "0"
+    return not self.proxy:IsAsciiMode()
 end
 
 ---get current schema name
 ---@return string
 function M.IME:get_schema_name()
-    local id = self.proxy:Get()[2]
-    for _, kv in ipairs(cjson.decode(self.proxy:List()[2])) do
-        if kv.key == id then
-            return kv.value
-        end
-    end
-    return ""
+    return self.proxy:GetCurrentSchema()
 end
 
 return M
