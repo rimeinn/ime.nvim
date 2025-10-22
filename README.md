@@ -28,7 +28,7 @@
 [![github/repo-size](https://shields.io/github/repo-size/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim)
 [![github/v](https://shields.io/github/v/release/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim)
 
-[![luarocks](https://img.shields.io/luarocks/v/rimeinn/ime.nvim)](https://luarocks.org/modules/rimeinn/ime.nvim)
+[![luarocks](https://img.shields.io/luarocks/v/rimeinn/ime.nvim)](https://luarocks.org/modules/Freed-Wu/ime.nvim)
 
 Switch back from IME after `InsertLeave`. Powered by dbus.
 
