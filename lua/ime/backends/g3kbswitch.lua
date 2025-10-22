@@ -48,7 +48,7 @@ end
 
 ---get current schema name
 ---@return string
-function M.IME:get_schema_name()
+function M.IME:get_current_schema()
     local id = self.proxy:Get()[2]
     for _, kv in ipairs(cjson.decode(self.proxy:List()[2])) do
         if kv.key == id then

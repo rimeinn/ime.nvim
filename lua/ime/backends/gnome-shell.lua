@@ -73,9 +73,9 @@ end
 
 ---get current schema name
 ---@return string
-function M.IME:get_schema_name()
+function M.IME:get_current_schema()
     local id = self.proxy:Eval(M.get_content("get_enabled.js"))
-    for _, kv in ipairs(cjson.decode(self.proxy:Eval(M.get_content("get_schema_name.js")))) do
+    for _, kv in ipairs(cjson.decode(self.proxy:Eval(M.get_content("get_current_schema.js")))) do
         if kv.key == id then
             return kv.value
         end

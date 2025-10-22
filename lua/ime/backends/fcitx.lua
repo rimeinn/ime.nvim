@@ -51,10 +51,10 @@ end
 
 ---get current schema name
 ---@return string
-function M.IME:get_schema_name()
+function M.IME:get_current_schema()
     local im = self.proxy:CurrentInputMethod()
     if im == 'rime' then
-        im = im .. ':' .. self.ime:get_schema_name()
+        im = im .. ':' .. self.ime:get_current_schema()
     end
     return im
 end

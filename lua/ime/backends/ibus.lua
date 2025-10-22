@@ -84,7 +84,7 @@ end
 
 ---get current schema name
 ---@return string
-function M.IME:get_schema_name()
+function M.IME:get_current_schema()
     return self.proxy:GetGlobalEngine()[3]
 end
 
