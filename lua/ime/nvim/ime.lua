@@ -49,6 +49,18 @@ function M.IME:create_autocmds(augroup_id)
     })
 end
 
+---get current schema ID, aka short name
+---@return string
+function M.IME:get_current_schema()
+    return self.backend:get_current_schema()
+end
+
+---get current schema name
+---@return string
+function M.IME:get_schema_name()
+    return self:get_current_schema()
+end
+
 ---override `IME`.
 ---@section overrides
 

@@ -39,7 +39,6 @@ local M = {
     },
     --- config for Key
     Key = {
-        name = 'Space', -- vim key name
         code = string.byte(' '), -- rime key code
         mask = 0, -- rime key mask
     }
@@ -93,6 +92,47 @@ function M.Key:new(key, keys, modifiers)
     setmetatable(key, {
         __index = self
     })
+    if key.name == nil then
+        local name = 'space'
+        if key.code < 256 then
+            name = string.char(key.code)
+            if name == ' ' then
+                name = 'Space'
+            end
+        else
+            for n, code in pairs(keys) do
+                if key.code == code then
+                    name = n
+                    break
+                end
+            end
+            for k, v in pairs(M.keys.any) do
+                if name == v then
+                    name = k:upper()
+                end
+            end
+        end
+        local mask = key.mask
+        if mask > 0 then
+            if #name == 1 then
+                name = name:upper()
+            end
+            for i = #modifiers, 1, -1 do
+                local modifier = modifiers[i]
+                if mask >= 2 ^ (i - 1) then
+                    mask = mask - 2 ^ (i - 1)
+                    for k, v in pairs(M.keys.modifiers) do
+                        if modifier == v then
+                            name = k .. "-" .. name
+                            break
+                        end
+                    end
+                end
+            end
+            name = "<" .. name .. ">"
+        end
+        key.name = name
+    end
     return key
 end
 

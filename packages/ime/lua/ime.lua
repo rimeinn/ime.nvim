@@ -1,4 +1,6 @@
 ---Display current schema name
+---@diagnostic disable: undefined-global
+-- luacheck: ignore 111 113
 local M = {}
 
 ---see `:h airline-xkblayout`
@@ -6,16 +8,20 @@ local M = {}
 function M.current()
     local ok, mod = pcall(require, "ime.nvim")
     if ok and mod.ime.backend then
-        return mod.ime.backend:get_schema_name()
+        return mod.ime:get_schema_name()
     end
-    ok, mod = pcall(require, "fcitx5-ui")
-    if ok then
-        return mod.displayCurrentIM()
+    -- https://github.com/black-desk/fcitx5-ui.nvim/pull/4/files
+    local mode = vim.fn.mode()
+    if mode ~= 'i' or mode ~= 'R' then
+        return ''
     end
-    ok, mod = pcall(require, "rime.nvim")
-    if ok then
-        mod.init()
-        return mod.ime.session:get_schema_name()
+
+    for _, name in ipairs { "fcitx5.nvim", "rime.nvim" } do
+        ok, mod = pcall(require, name)
+        if ok then
+            mod.init()
+            return mod.ime:get_schema_name()
+        end
     end
     return ""
 end

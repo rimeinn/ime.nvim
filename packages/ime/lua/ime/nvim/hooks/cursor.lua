@@ -7,6 +7,7 @@ local M = {
         highlight = 'CursorIM',
         schemas = {
             [".default"] = { bg = 'white' },
+            rime = { bg = 'red' },
             double_pinyin_mspy = { bg = 'red' },
             japanese = { bg = 'yellow' }
         }
@@ -31,7 +32,7 @@ setmetatable(M.Cursor, {
 ---@param schema string?
 function M.Cursor:set_hl(schema)
     schema = schema or ".default"
-    local hl = self.schemas[schema]
+    local hl = self.schemas[schema] or self.schemas[".default"]
     vim.api.nvim_set_hl(0, self.highlight, hl)
 end
 
