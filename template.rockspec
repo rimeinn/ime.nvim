@@ -17,7 +17,7 @@ description = {
 }
 
 -- https://github.com/stefano-m/lua-dbus_proxy/issues/14
-dependencies = { 'dbus_proxy >= 0.10.4', 'lua-cjson', 'luafilesystem' }
+dependencies = { 'dbus_proxy >= 0.10.4', 'lua-cjson', 'luafilesystem', 'ime' }
 
 test_dependencies = $test_dependencies
 

@@ -1,7 +1,6 @@
 ---select a backend if available
 ---@diagnostic disable: undefined-global
 -- luacheck: ignore 111 113
-
 local get_path = require 'ime.backends.gnome-shell'.get_path
 local M = {
     IMEs = {

@@ -1,8 +1,10 @@
 ---backend for g3kbswitch. If you use ibus or fcitx5, please use them.
 ---credit: https://github.com/black-desk
-local IME = require "ime.ime".IME
 local cjson = require "cjson"
 local p = require "dbus_proxy"
+
+local IME = require "ime.ime".IME
+
 local M = {
     IME = {
         proxy = {

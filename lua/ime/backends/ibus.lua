@@ -1,9 +1,11 @@
 ---backend for ibus
 ---credit: https://github.com/black-desk
-local IME = require "ime.ime".IME
 local lgi = require "lgi"
 local p = require "dbus_proxy"
-local fs = require 'ime.fs'
+
+local IME = require "ime.ime".IME
+local fs = require 'ime.backends'
+
 local M = {
     ibus_config_dir = fs.joinpath(os.getenv("HOME"), ".config", "ibus", "bus"),
     IME = {

@@ -1,9 +1,11 @@
 ---backend for gnome-shell < 41. If you use ibus or fcitx5, please use them.
 ---credit: https://github.com/lyokha/g3kb-switch
-local IME = require "ime.ime".IME
 local cjson = require "cjson"
-local fs = require 'ime.fs'
 local p = require "dbus_proxy"
+
+local IME = require "ime.ime".IME
+local fs = require 'ime.backends'
+
 local M = {
     IME = {
         proxy = {

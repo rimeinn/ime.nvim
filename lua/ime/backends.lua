@@ -1,3 +1,4 @@
+---utilities for backends.
 ---wrap `vim.fs` and `vim.fn`
 ---@diagnostic disable: undefined-global
 -- luacheck: ignore 111 113
