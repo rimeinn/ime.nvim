@@ -1,4 +1,5 @@
----select a backend if available
+---select an available backend
+---@module ime.backends.auto
 ---@diagnostic disable: undefined-global
 -- luacheck: ignore 111 113
 local get_path = require 'ime.backends.gnome-shell'.get_path

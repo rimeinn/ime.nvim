@@ -1,4 +1,4 @@
----Provide a UI
+---Provide a UI.
 ---NOTE: `ui:draw()`'s output is `win:update()`'s input
 local fs = require 'ime.fs'
 

@@ -1,5 +1,6 @@
 ---utilities for backends.
 ---wrap `vim.fs` and `vim.fn`
+---@module ime.backends
 ---@diagnostic disable: undefined-global
 -- luacheck: ignore 111 113
 local lfs = require "lfs"

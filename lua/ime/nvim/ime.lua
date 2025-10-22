@@ -1,4 +1,5 @@
 ---A system IME
+---@module ime.nvim.ime
 ---@diagnostic disable: undefined-global
 -- luacheck: ignore 111 112 113
 local IME = require "ime.ime".IME

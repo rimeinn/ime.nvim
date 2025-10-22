@@ -1,4 +1,5 @@
 ---backend for fcitx5
+---@module ime.backends.fcitx
 local p = require "dbus_proxy"
 
 local IME = require "ime.ime".IME

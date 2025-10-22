@@ -1,4 +1,5 @@
 ---backend for ibus
+---@module ime.backends.ibus
 ---credit: https://github.com/black-desk
 local lgi = require "lgi"
 local p = require "dbus_proxy"

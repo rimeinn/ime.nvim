@@ -1,4 +1,5 @@
 ---lazy load `ime.nvim.ime`
+---@module ime.nvim
 local IME = require 'ime.nvim.ime'.IME
 local M = {
     ime = IME()
