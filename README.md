@@ -117,6 +117,8 @@ Some Vim plugins use CLI:
   fcitx-remote
 - [vim-barbaric](https://github.com/rlue/vim-barbaric): support ibus engine,
   fcitx-remote, xkb-switch
+- [nvim-ibus-sw](https://github.com/kevinhwang91/nvim-ibus-sw): only support
+  ibus engine
 
 ##### dbus
 
