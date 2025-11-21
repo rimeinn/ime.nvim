@@ -28,7 +28,7 @@
 [![github/repo-size](https://shields.io/github/repo-size/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim)
 [![github/v](https://shields.io/github/v/release/rimeinn/ime.nvim)](https://github.com/rimeinn/ime.nvim)
 
-[![luarocks](https://img.shields.io/luarocks/v/rimeinn/ime.nvim)](https://luarocks.org/modules/Freed-Wu/ime.nvim)
+[![luarocks](https://img.shields.io/luarocks/v/Freed-Wu/ime.nvim)](https://luarocks.org/modules/Freed-Wu/ime.nvim)
 
 Switch back from IME after `InsertLeave`. Powered by dbus.
 
@@ -261,9 +261,9 @@ $ luarocks --lua-version 5.1 --local --tree ~/.local/share/nvim/rocks install im
 
 ```sh
 if [[ -f /run/current-system/nixos-version ]]; then
-  if [[ -f /the/path/lua/5.1/ime/get-GI_TYPELIB_PATH.nix ]]; then
-    export GI_TYPELIB_PATH
-    eval GI_TYPELIB_PATH="$(nix eval --impure -f ~/.local/share/lua/5.1/ime/get-GI_TYPELIB_PATH.nix)"
-  fi
+    if [[ -f /the/path/lua/5.1/ime/get-GI_TYPELIB_PATH.nix ]]; then
+        export GI_TYPELIB_PATH
+        eval GI_TYPELIB_PATH="$(nix eval --impure -f ~/.local/share/lua/5.1/ime/get-GI_TYPELIB_PATH.nix)"
+    fi
 fi
 ```
