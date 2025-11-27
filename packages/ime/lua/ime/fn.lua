@@ -1,4 +1,4 @@
----wrap `vim.fs` and `vim.fn`
+---wrap `vim.fn`
 ---@diagnostic disable: undefined-global
 -- luacheck: ignore 111 113
 local M = {}

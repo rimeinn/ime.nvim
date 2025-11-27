@@ -2,7 +2,7 @@
 ---NOTE: `ui:draw()`'s output is `win:update()`'s input
 ---@diagnostic disable: undefined-global
 -- luacheck: ignore 112 113
-local fs = require 'ime.fs'
+local fn = require 'ime.fn'
 local M = {
     Win = {
         win_id = -1,
@@ -61,7 +61,7 @@ function M.Win:update(lines, col)
     self.lines = lines or {}
     local width = 0
     for _, line in ipairs(self.lines) do
-        width = math.max(fs.strwidth(line), width)
+        width = math.max(fn.strwidth(line), width)
     end
     self.config = {
         relative = "cursor",

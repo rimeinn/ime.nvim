@@ -1,6 +1,6 @@
 ---Provide a UI.
 ---NOTE: `ui:draw()`'s output is `win:update()`'s input
-local fs = require 'ime.fs'
+local fn = require 'ime.fn'
 
 local styles = {
     circle = { '①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⓪' },
@@ -71,7 +71,7 @@ function M.UI:draw(context)
     local col = 0
     local left = self.left
     if context.menu.page_no ~= 0 then
-        local left_width = fs.strwidth(left)
+        local left_width = fn.strwidth(left)
         candidates_ = left .. candidates_
         local whitespace = " "
         preedit = whitespace:rep(left_width) .. preedit
