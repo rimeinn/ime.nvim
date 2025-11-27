@@ -5,7 +5,7 @@ local cjson = require "cjson"
 local p = require "dbus_proxy"
 
 local IME = require "ime.ime".IME
-local fs = require 'ime.backends'
+local fs = require 'vim.fs'
 
 local M = {
     IME = {

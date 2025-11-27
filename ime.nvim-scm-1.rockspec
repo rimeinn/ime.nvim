@@ -12,7 +12,7 @@ description = {
 }
 
 -- https://github.com/stefano-m/lua-dbus_proxy/issues/14
-dependencies = { "lua >= 5.1", "dbus_proxy >= 0.10.4", "lua-cjson", "luafilesystem", "ime >= 0.0.4" }
+dependencies = { "lua >= 5.1", "dbus_proxy >= 0.10.4", "lua-cjson", "luafilesystem", "ime >= 0.0.4", "vim" }
 
 build = {
 	type = "builtin",

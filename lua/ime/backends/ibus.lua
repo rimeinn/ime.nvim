@@ -5,7 +5,7 @@ local lgi = require "lgi"
 local p = require "dbus_proxy"
 
 local IME = require "ime.ime".IME
-local fs = require 'ime.backends'
+local fs = require 'vim.fs'
 
 local M = {
     ibus_config_dir = fs.joinpath(os.getenv("HOME"), ".config", "ibus", "bus"),
