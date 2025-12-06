@@ -31,11 +31,13 @@ jobs:
         run: |
           # https://github.com/drivendataorg/repro-zipfile/pull/23
           pip install git+https://github.com/Freed-Wu/repro-zipfile@mode rpzip
+          sudo apt-get -y update
+          sudo apt-get -y install binutils-dev
       - run: |
           luarocks config variables.ZIP rpzip
-          luarocks install lua-language-server
-          luarocks install luamake
           luarocks install bee.lua
+          luarocks install luamake
+          luarocks install lua-language-server
           rm -f ./*.rock
           luarocks list --porcelain | sed 's/\(\S\+\).*/luarocks pack \1 \&\& \
           luarocks download --rockspec \1/' | sh
