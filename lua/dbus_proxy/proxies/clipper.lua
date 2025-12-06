@@ -2,7 +2,6 @@
 ---<https://docs.kde.org/stable5/en/plasma-workspace/klipper/index.html>
 ---miss APIs of dbus. see
 ---<https://freeaptitude.altervista.org/articles/playing-with-dbus-and-kde-applications-part-1.html>
----@module clipper.utils.clipper
 local p = require "dbus_proxy"
 
 local M = {

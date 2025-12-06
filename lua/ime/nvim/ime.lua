@@ -1,9 +1,8 @@
 ---A system IME
----@module ime.nvim.ime
 ---@diagnostic disable: undefined-global
 -- luacheck: ignore 111 112 113
 local IME = require "ime.ime".IME
-local AutoIME = require "ime.backends.auto".IME
+local AutoIME = require "dbus_proxy.proxies.ime".IME
 local M = {
     IME = {}
 }

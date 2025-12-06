@@ -1,5 +1,4 @@
 ---backend for fcitx5 with rime support
----@module ime.backends.fcitx-rime
 local p = require "dbus_proxy"
 
 local IME = require "ime.ime".IME

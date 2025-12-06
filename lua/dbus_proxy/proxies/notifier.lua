@@ -1,6 +1,5 @@
 ---a class to send notification.
 ---<https://specifications.freedesktop.org/notification/1.3/protocol.html>
----@module notifier.utils.notifier
 local p = require "dbus_proxy"
 
 local M = {
