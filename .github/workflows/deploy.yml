@@ -32,7 +32,7 @@ jobs:
           # https://github.com/drivendataorg/repro-zipfile/pull/23
           pip install git+https://github.com/Freed-Wu/repro-zipfile@mode rpzip
           sudo apt-get -y update
-          sudo apt-get -y install binutils-dev
+          sudo apt-get -y install binutils-dev libunwind-dev
       - run: |
           luarocks config variables.ZIP rpzip
           luarocks install bee.lua
