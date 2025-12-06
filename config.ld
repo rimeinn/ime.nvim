@@ -4,5 +4,4 @@
 project = "ime.nvim"
 readme = "README.md"
 format = "cmark"
-file = {"packages/ime/lua", "lua"}
 dir = "_readthedocs/html"
