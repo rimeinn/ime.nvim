@@ -68,8 +68,11 @@ Currently, we have two schemes to realize it:
 
 librime is a library for creating IME.
 
-- [coc-rime](https://github.com/tonyfettes/coc-rime): written in javascript
 - [rime.nvim](https://github.com/rimeinn/rime.nvim): written in lua
+- [coc-rime](https://github.com/tonyfettes/coc-rime): written in javascript.
+  Inactive maintenance.
+- [pyrime.nvim](https://github.com/rimeinn/pyrime/tree/main/src/pyrime/nvim):
+  written in python. Inactive maintenance.
 
 ##### [dbus](https://dbus.freedesktop.org/)
 
