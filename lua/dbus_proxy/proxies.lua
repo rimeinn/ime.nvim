@@ -25,7 +25,7 @@ function M.set_env(force)
     local f = io.open("/run/current-system/nixos-version")
     if f then
         f:close()
-        f = io.popen("nix eval --impure -f " .. get_path("get-GI_TYPELIB_PATH.nix"))
+        f = io.popen("nix eval --impure -f " .. M.get_path("get-GI_TYPELIB_PATH.nix"))
         local text
         if f then
             text = f:read()

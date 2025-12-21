@@ -266,7 +266,7 @@ $ luarocks --lua-version 5.1 --local --tree ~/.local/share/nvim/rocks install im
 if [[ -f /run/current-system/nixos-version ]]; then
     if [[ -f /the/path/lua/5.1/ime/get-GI_TYPELIB_PATH.nix ]]; then
         export GI_TYPELIB_PATH
-        eval GI_TYPELIB_PATH="$(nix eval --impure -f ~/.local/share/lua/5.1/ime/get-GI_TYPELIB_PATH.nix)"
+        eval GI_TYPELIB_PATH="$(nix eval --impure -f /the/path/lua/5.1/ime/get-GI_TYPELIB_PATH.nix)"
     fi
 fi
 ```
