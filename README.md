@@ -79,8 +79,17 @@ librime is a library for creating IME.
 dbus is an inter process communication system. we can communicate with an
 external IME.
 
-- [fcitx5.nvim](https://github.com/tonyfettes/fcitx5.nvim): for fcitx5
-- [fcitx5-ui.nvim](https://github.com/black-desk/fcitx5-ui.nvim): for fcitx5
+- [fcitx5.nvim](https://github.com/tonyfettes/fcitx5.nvim): for fcitx5. You must
+  disable fcitx5 in GUI to make it work.
+- [fcitx5-ui.nvim](https://github.com/black-desk/fcitx5-ui.nvim): for fcitx5.
+  this project rewrite fcitx5.nvim to support using fcitx5 in both GUI and
+  neovim.
+
+> check if corresponding Input method frontend is disabled in Fcitx5
+> configuration, if your terminal/GUI support that. Otherwise, your terminal/GUI
+> will capture your keystrokes and sent them to Fcitx5 instead of Neovim.
+>
+> -- fcitx5.nvim
 
 #### IME outside Vim
 
