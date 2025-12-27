@@ -209,10 +209,15 @@ At the same time, you must enable one of them.
 >
 > -- [coc-snippets](https://github.com/neoclide/coc-snippets/issues/137)
 
+- [boshiamy-cue.vim](https://github.com/blacksburg98/boshiamy-cue): the oldest
+  solution
 - [vimIM](https://github.com/vim-scripts/VimIM): stop maintenance
+- [vim-boshiamy](https://github.com/dm4/vim-boshiamy): forked from vimIM
+- [ime.vim](https://github.com/pi314/ime.vim): a light weight alternative of
+  vimIM
 - [ZFVimIM](https://github.com/ZSaberLv0/ZFVimIM): a rewrite of vimIM.
-  It will
-  [disable most completion plugins](https://github.com/ZSaberLv0/ZFVimIM/blob/master/plugin/ZFVimIM_autoDisable.vim)
+  It will disable most
+  [completion plugins](https://github.com/ZSaberLv0/ZFVimIM/blob/master/plugin/ZFVimIM_autoDisable.vim)
   when it is enabled.
 
 ## Dependencies
