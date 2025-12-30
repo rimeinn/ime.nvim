@@ -189,6 +189,7 @@ We can create:
 
 - [ds-pinyin-lsp](https://github.com/iamcco/ds-pinyin-lsp): only support full
   pinyin.
+- [rime-ls](https://github.com/wlh320/rime-ls): inspired from ds-pinyin-lsp.
 
 #### [coc.nvim](https://github.com/neoclide/coc.nvim)
 
