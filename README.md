@@ -166,9 +166,10 @@ Otherwise, input ASCII characters.
 
 - more key pressing, the 10-th candidation need 10 times
   <kbd>Ctrl</kbd> + <kbd>N</kbd>
-- ASCII characters cannot be near CJKV characters.
-  `hi nihao` will complete `nihao`, `hinihao` will complete `hinihao`.
-  However, it shouldn't happen. Because:
+- ASCII characters cannot be near CJKV characters. Many languages support
+  variable names containing Unicode, so completions after CJKV characters will
+  be ignored. `hi nihao` will complete `nihao`, `hinihao` will complete
+  `hinihao`. However, it shouldn't happen. Because:
 
 <!-- markdownlint-enable MD033 -->
 
@@ -186,6 +187,10 @@ We can create:
   - manage the popup menu by itself
 
 #### LSP
+
+> 由于 rime-ls 并不是 LSP 的常规用法，难以要求编辑器来适配 rime-ls
+>
+> -- [rime-ls](https://github.com/wlh320/rime-ls/issues/26)
 
 - [ds-pinyin-lsp](https://github.com/iamcco/ds-pinyin-lsp): only support full
   pinyin.
