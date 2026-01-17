@@ -37,18 +37,24 @@ Switch back from IME after `InsertLeave`. Powered by dbus.
 ### Multi-mode IME
 
 - Vim (include other editors who have a vim emulator) is mulit-mode editor:
-  - insert mode
-  - normal mode
+  - insert mode: press `jkhl` to input `jkhl`
+  - normal mode: press `jkhl` to move cursor
   - ...
 - IME is also multi-mode mostly:
-  - ASCII mode
-  - CJKV mode
+  - ASCII mode: press `nihao` to input `nihao`
+  - CJKV mode: press `nihao` to input `你好`
   - ...
 
 In insert mode, we can switch IME mode to input ASCII characters or CJKV
 characters. However, in other modes of Vim, only ASCII mode can work: Vim will
-not response any CJKV character. So we must switch back from IME after
-`InsertLeave`.
+not response any CJKV character.
+
+| Vim/IME | ASCII   | CJKV    |
+| ------- | ------- | ------- |
+| insert  | :smile: | :smile: |
+| normal  | :smile: | :cry:   |
+
+So we must switch back from IME after `InsertLeave`.
 
 Currently, we have two schemes to realize it:
 
