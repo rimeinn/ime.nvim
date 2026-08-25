@@ -1,20 +1,22 @@
 ---select an available backend
 local set_env = require 'dbus_proxy.proxies'.set_env
-local M = {}
-
----call `set_env`() before `require`().
----@param IMEs function[]?
----@return table? ime
-function M.IME(IMEs)
-    set_env()
-    IMEs = IMEs or {
-        require 'dbus_proxy.proxies.ime.fcitx'.IME,
-        require 'dbus_proxy.proxies.ime.fcitx-rime'.IME,
-        require 'dbus_proxy.proxies.ime.g3kbswitch'.IME,
-        require 'dbus_proxy.proxies.ime.gnome-shell'.IME,
-        require 'dbus_proxy.proxies.ime.ibus'.IME,
+local M = {
+    names = {
+        'dbus_proxy.proxies.ime.fcitx',
+        'dbus_proxy.proxies.ime.fcitx-rime',
+        'dbus_proxy.proxies.ime.g3kbswitch',
+        'dbus_proxy.proxies.ime.gnome-shell',
+        'dbus_proxy.proxies.ime.ibus',
     }
-    for _, IME in ipairs(IMEs) do
+}
+
+---@param names string[]?
+---@return table? ime
+function M.IME(names)
+    set_env()
+    names = names or M.names
+    for _, name in ipairs(names) do
+        local IME = require(name).IME
         local ok, ime = pcall(IME)
         if ok then
             return ime
