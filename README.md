@@ -291,9 +291,6 @@ require("lazy").setup {
 
 ## Tips
 
-- For Nix user, run
-  `/the/path/of/luarocks/rocks-5.1/ime.nvim/VERSION/scripts/update.sh`
-  when dynamic link libraries are broken after `nix-collect-garbage -d`.
 - For NixOS, `require'dbus_proxy'` needs correct `vim.env.GI_TYPELIB_PATH`. This
   plugin will do it out of box. You also can add the following code to run once
   to speed up:
