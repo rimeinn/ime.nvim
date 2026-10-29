@@ -2,9 +2,8 @@
 ---credit: https://github.com/lyokha/g3kb-switch
 local cjson = require "cjson"
 local p = require "dbus_proxy"
-
+local datafile = require 'datafile'
 local IME = require "ime.ime".IME
-local fs = require 'vim.fs'
 
 local M = {
     IME = {
@@ -17,21 +16,12 @@ local M = {
     }
 }
 
----get file path
----@param name string
----@return string
-function M.get_path(name)
-    return fs.joinpath(
-        fs.dirname(debug.getinfo(1).source:match("@?(.*)")),
-        "scripts", name
-    )
-end
-
 ---get file content
 ---@param name string
 ---@return string
 function M.get_content(name)
-    local f = io.open(M.get_path(name))
+    local f = datafile.open("conf/" .. name) or
+        io.open(debug.getinfo(1).source:match("@?(.*/)[^/]+/[^/]+/[^/]+/[^/]+/[^/]+$") .. "etc/conf/" .. name)
     if f == nil then
         return ""
     end

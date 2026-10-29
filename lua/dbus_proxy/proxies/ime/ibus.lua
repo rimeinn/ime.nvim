@@ -5,9 +5,10 @@ local p = require "dbus_proxy"
 
 local IME = require "ime.ime".IME
 local fs = require 'vim.fs'
+local PlatformDirs = require 'platformdirs'.PlatformDirs
 
 local M = {
-    ibus_config_dir = fs.joinpath(os.getenv("HOME"), ".config", "ibus", "bus"),
+    ibus_config_dir = PlatformDirs { appname = "ibus", version = "bus" }:user_config_dir(),
     IME = {
         ascii_kbd = "xkb:us::eng",
         non_ascii_kbd = "rime",

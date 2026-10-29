@@ -1,17 +1,13 @@
 ---utils for dbus proxy
-local fs = require 'vim.fs'
+local datafile = require 'datafile'
+local _f, path = datafile.open("conf/get-GI_TYPELIB_PATH.nix")
+if _f then
+    _f:close()
+else
+    path = debug.getinfo(1).source:match("@?(.*/)[^/]+/[^/]+/[^/]+$") .. "etc/conf/get-GI_TYPELIB_PATH.nix"
+end
 
 local M = {}
-
----get file path
----@param name string
----@return string
-function M.get_path(name)
-    return fs.joinpath(
-        fs.dirname(debug.getinfo(1).source:match("@?(.*)")),
-        "proxies", "scripts", name
-    )
-end
 
 ---set `$GI_TYPELIB_PATH`
 ---@param force boolean?
@@ -25,7 +21,7 @@ function M.set_env(force)
     local f = io.open("/run/current-system/nixos-version")
     if f then
         f:close()
-        f = io.popen("nix eval --impure -f " .. M.get_path("get-GI_TYPELIB_PATH.nix"))
+        f = io.popen("nix eval --impure -f " .. path)
         local text
         if f then
             text = f:read()
